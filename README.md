@@ -28,3 +28,7 @@ Sidenote, if you really think you're clever enough to self host then you're prob
 **Framework Links**
 
 - [Sapphire's GitHub](https://github.com/sapphire-project/framework)
+
+## Credits
+
+This page is heavily based on the [Skyra README Page](https://github.com/skyra-project/skyra/blob/main/README.md)
