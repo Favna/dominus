@@ -2,6 +2,8 @@
 
 import type { ConnectionOptions } from "typeorm";
 import type { ClientOptions } from "discord.js";
+import { GuildEntity } from "./lib/database/entities/GuildEntity.js";
+import { InfractionEntity } from "./lib/database/entities/InfractionEntity.js";
 
 export const NAME = "Dominus";
 export const PREFIX = "d!";
@@ -21,7 +23,9 @@ export const PGSQL_DATABASE_HOST = "localhost";
 export const PGSQL_DATABASE_URL = `posgresql://${PGSQL_DATABASE_USER}:${PGSQL_DATABASE_PASSWORD}@${PGSQL_DATABASE_HOST}:${PGSQL_DATABASE_PORT}/${PGSQL_DATABASE_NAME}`;
 
 export const PGSQL_DATABASE_OPTIONS: ConnectionOptions = {
-	type: "postgres"
+	url: PGSQL_DATABASE_URL,
+	type: "postgres",
+	entities: [GuildEntity, InfractionEntity]
 };
 
 export const CLIENT_OPTIONS: ClientOptions = {};
