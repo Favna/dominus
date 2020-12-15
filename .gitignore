@@ -1,0 +1,17 @@
+node_modules
+.vs/
+
+src/config.ts
+
+dist/
+
+**/*.js
+**/*.mjs
+!scriptes/*.mjs
+**/*.js.map
+**/*.d.ts
+**/*.tsbuildinfo
+
+package-lock.json
+
+gh

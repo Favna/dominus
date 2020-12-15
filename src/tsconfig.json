@@ -1,0 +1,11 @@
+{
+	"extends": "../tsconfig.base.json",
+	"compilerOptions": {
+		"outDir": "../dist",
+		"rootDir": ".",
+		"baseUrl": ".",
+		"composite": true
+	},
+	"include": [".", "./**/*.json", "lib/database/structures/.ts"],
+	"exclude": ["./tsconfig.json", "./config.example.ts"]
+}
