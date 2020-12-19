@@ -7,23 +7,36 @@ export class GuildEntity extends BaseEntity {
 	@PrimaryColumn({ type: "varchar", name: "id", length: 19 })
 	public id!: string;
 
-	@Column({ type: "varchar", name: "prefix", length: 5, default: () => PREFIX })
+	@Column({ type: "varchar", name: "prefix", length: 5 })
 	public prefix = PREFIX;
 
-	@Column({ type: "varchar", name: "moderator", default: "Moderator" })
-	public moderator = "Moderator";
+	@Column({ type: "integer", name: "infractionsTotal", default: 0 })
+	public infractionsTotal = 0;
 
-	@Column({ type: "varchar", name: "administrator", default: "Administrator" })
-	public administrator = "Administrator";
+	@Column({ type: "varchar", name: "roles.moderator", default: "Moderator" })
+	public rolesModerator = "Moderator";
+
+	@Column({ type: "varchar", name: "roles.administrator", default: "Administrator" })
+	public rolesAdministrator = "Administrator";
+
+	@Column({ type: "varchar", name: "channels.moderation", default: "moderation-logs" })
+	public channelsModeration = "moderation-logs";
 
 	@OneToMany(() => InfractionEntity, infraction => infraction.guild)
 	infractions!: InfractionEntity[];
+
+	public async increaseInfractionsTotal() {
+		this.infractionsTotal += 1;
+		await this.save();
+		return this.infractionsTotal;
+	}
 }
 
 export enum ConfigurableGuildKeys {
 	Prefix = "prefix",
-	Moderator = "moderator",
-	Administrator = "administrator"
+	ModeratorRole = "rolesModerator",
+	AdministratorRole = "rolesAdministrator",
+	ModerationChannel = "channelsModeration"
 }
 
 export enum NonConfigurableGuildKeys {

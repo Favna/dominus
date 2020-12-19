@@ -11,9 +11,15 @@ export class DominusClient extends SapphireClient {
 	public constructor(options?: ClientOptions) {
 		super(options);
 
-		this.fetchPrefix = async message => (message.guild ? (await this.set.guilds.ensure(message.guild.id)).prefix : "");
+		this.fetchPrefix = async message =>
+			message.guild ? this.set.guilds.getPrefix(message.guild.id) ?? (await this.set.guilds.ensure(message.guild.id)).prefix : "";
 
-		for (const store of this.stores.values()) Reflect.set(store, "preloadHook", (path: string) => import(`file://${path}`));
+		for (const store of this.stores.values()) Reflect.set(store, "preloadHook", (path: string) => import(`file://${path}?d=${Date.now()}`));
+	}
+
+	public async destroy() {
+		await this.connection.close();
+		return super.destroy();
 	}
 
 	public async login(token?: string): Promise<string> {

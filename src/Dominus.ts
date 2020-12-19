@@ -1,7 +1,7 @@
-import { TOKENS } from "./config.js";
+import { CLIENT_OPTIONS, TOKENS } from "./config.js";
 import { DominusClient } from "./lib/DominusClient.js";
 
-const client = new DominusClient();
+const client = new DominusClient(CLIENT_OPTIONS);
 
 try {
 	await client.login(TOKENS.BOT_TOKEN);

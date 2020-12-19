@@ -1,4 +1,4 @@
-# Dominus [![Discord](https://discord.com/api/guilds/554742955898961930/embed.png)](https://discord.gg/WnPS6yj)
+# Dominus
 
 ## Developing on Dominus
 

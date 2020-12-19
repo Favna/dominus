@@ -6,7 +6,6 @@ export default class extends Event<Events.CommandDenied> {
 	}
 
 	public run(error: UserError, { message }: CommandDeniedPayload) {
-		if (error.identifier === "OwnerOnly") return;
 		return message.channel.send(error.message);
 	}
 }
