@@ -1,4 +1,4 @@
-import { CLIENT_OPTIONS, TOKENS } from "./config.js";
+import { CLIENT_OPTIONS, TOKENS } from "./config";
 import { DominusClient } from "./lib/DominusClient.js";
 
 const client = new DominusClient(CLIENT_OPTIONS);

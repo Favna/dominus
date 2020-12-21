@@ -6,6 +6,6 @@
 		"baseUrl": ".",
 		"composite": true
 	},
-	"include": [".", "./**/*.json", "lib/database/structures/.ts"],
+	"include": [".", "./**/*.json"],
 	"exclude": ["./tsconfig.json", "./config.example.ts"]
 }

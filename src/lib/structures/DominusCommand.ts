@@ -5,13 +5,8 @@ import { sep } from "path";
 export abstract class DominusCommand extends Command {
 	public constructor(context: PieceContext, { name, ...options }: CommandOptions) {
 		super(context, { name, ...options });
-	}
-
-	public get category() {
-		return this.path.split(sep).reverse()[1] ?? "General";
-	}
-
-	public get usage() {
-		return this.name;
+		this.usage = options.usage ?? this.name;
+		this.conditions = options.conditions ?? "This command can be used by anyone.";
+		this.category = options.category ?? this.path.split(sep).reverse()[1] ?? "General";
 	}
 }

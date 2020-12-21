@@ -10,6 +10,7 @@ dist/
 !scriptes/*.mjs
 **/*.js.map
 **/*.d.ts
+!src/**/*.d.ts
 **/*.tsbuildinfo
 
 package-lock.json

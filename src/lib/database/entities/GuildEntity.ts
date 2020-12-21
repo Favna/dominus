@@ -1,5 +1,5 @@
 import { BaseEntity, Column, Entity, OneToMany, PrimaryColumn } from "typeorm";
-import { PREFIX } from "../../../config.js";
+import { PREFIX } from "../../../config";
 import { InfractionEntity } from "./InfractionEntity.js";
 
 @Entity("guild")

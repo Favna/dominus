@@ -4,7 +4,7 @@ import { DominusCommand } from "../../lib/structures/DominusCommand.js";
 import { Message, TextChannel, MessageEmbed, Permissions } from "discord.js";
 import { InfractionActions, InfractionEntity } from "../../lib/database/entities/InfractionEntity.js";
 import { ConfigurableGuildKeys } from "../../lib/database/entities/GuildEntity.js";
-import { CLIENT_ID, OWNERS } from "../../config.js";
+import { CLIENT_ID, OWNERS } from "../../config";
 
 export default class extends DominusCommand {
 	public constructor(context: PieceContext) {

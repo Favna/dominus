@@ -2,7 +2,7 @@ import { Args, BucketType } from "@sapphire/framework";
 import type { PieceContext } from "@sapphire/pieces";
 import { DominusCommand } from "../../lib/structures/DominusCommand.js";
 import { Message, TextChannel, MessageEmbed, Permissions } from "discord.js";
-import { CLIENT_ID, OWNERS } from "../../config.js";
+import { CLIENT_ID, OWNERS } from "../../config";
 import { InfractionEntity, InfractionActions } from "../../lib/database/entities/InfractionEntity.js";
 import { ConfigurableGuildKeys } from "../../lib/database/entities/GuildEntity.js";
 

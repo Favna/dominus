@@ -1,5 +1,5 @@
 import { Connection, createConnection, getCustomRepository, getRepository, Repository } from "typeorm";
-import { PGSQL_DATABASE_OPTIONS } from "../../../config.js";
+import { PGSQL_DATABASE_OPTIONS } from "../../../config";
 import { InfractionEntity } from "../entities/InfractionEntity.js";
 import { GuildRepository } from "../repositories/GuildRepository.js";
 import { UserRepository } from "../repositories/UserRepository.js";
